@@ -1,4 +1,4 @@
-package com.yulam.acalib.model.dto.country;
+package com.yulam.acalib.model.dto;
 
 import com.yulam.acalib.model.domain.Country;
 import com.yulam.acalib.validator.IsNumber;

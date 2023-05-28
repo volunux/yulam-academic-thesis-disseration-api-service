@@ -2,7 +2,7 @@ package com.yulam.acalib.service.impl;
 
 import com.yulam.acalib.exception.FacultyNotFoundException;
 import com.yulam.acalib.model.domain.Faculty;
-import com.yulam.acalib.model.dto.faculty.FacultyDto;
+import com.yulam.acalib.model.dto.FacultyDto;
 import com.yulam.acalib.model.response.other.DeleteIdsDto;
 import com.yulam.acalib.repository.jpa.FacultyJpaRepository;
 import com.yulam.acalib.service.FacultyService;

@@ -1,7 +1,7 @@
 package com.yulam.acalib.model.mapper;
 
 import com.yulam.acalib.model.domain.Country;
-import com.yulam.acalib.model.view.country.CountryView;
+import com.yulam.acalib.model.view.CountryView;
 
 import javax.validation.constraints.NotNull;
 import java.util.Collections;

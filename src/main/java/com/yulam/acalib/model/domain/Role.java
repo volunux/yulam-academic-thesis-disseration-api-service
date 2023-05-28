@@ -13,7 +13,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "role")
+@Table(name = "role", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"code"})
+})
 public class Role {
 
   @Id

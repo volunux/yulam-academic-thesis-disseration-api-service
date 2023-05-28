@@ -1,6 +1,6 @@
-package com.yulam.acalib.model.view.department;
+package com.yulam.acalib.model.view;
 
-import com.yulam.acalib.model.view.faculty.FacultyView;
+import com.yulam.acalib.model.view.FacultyView;
 import lombok.*;
 
 import java.time.LocalDateTime;

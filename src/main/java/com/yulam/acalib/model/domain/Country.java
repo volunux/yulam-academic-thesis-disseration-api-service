@@ -13,6 +13,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "country", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"code"})
+})
 public class Country {
 
   @Id

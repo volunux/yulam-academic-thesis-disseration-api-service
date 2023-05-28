@@ -22,11 +22,9 @@ public class Order {
 
   private OrderStatus orderStatus;
 
-  private DeliveryMethod deliveryMethod;
+  private PaymentMethod paymentMethod;
 
   private Country country;
-
-  private PaymentMethod paymentMethod;
 
   private Set<OrderItem> orderItems;
 

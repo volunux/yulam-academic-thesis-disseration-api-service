@@ -3,7 +3,7 @@
 --changeset yusuf:1
 
 --preconditions onFail:HALT onError:HALT
---precondition-sql-check expectedResult:0 SELECT count(*) FROM information_schema.columns where table_name = 'yusufa';
+--precondition-sql-check expectedResult:0 SELECT count(*) FROM information_schema.columns where table_name = 'country';
 
 
 CREATE TABLE country (

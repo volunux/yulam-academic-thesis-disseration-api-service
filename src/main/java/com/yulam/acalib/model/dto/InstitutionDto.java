@@ -1,4 +1,4 @@
-package com.yulam.acalib.model.dto.institution;
+package com.yulam.acalib.model.dto;
 
 import lombok.*;
 

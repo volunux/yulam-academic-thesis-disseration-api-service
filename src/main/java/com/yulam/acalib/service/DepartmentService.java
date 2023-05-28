@@ -1,7 +1,7 @@
 package com.yulam.acalib.service;
 
 import com.yulam.acalib.model.domain.Department;
-import com.yulam.acalib.model.dto.department.DepartmentDto;
+import com.yulam.acalib.model.dto.DepartmentDto;
 import com.yulam.acalib.model.response.other.DeleteIdsDto;
 
 import java.util.List;

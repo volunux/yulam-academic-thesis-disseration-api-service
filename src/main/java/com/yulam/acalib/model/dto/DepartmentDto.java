@@ -1,4 +1,4 @@
-package com.yulam.acalib.model.dto.department;
+package com.yulam.acalib.model.dto;
 
 import com.yulam.acalib.model.domain.Department;
 import com.yulam.acalib.model.domain.Faculty;

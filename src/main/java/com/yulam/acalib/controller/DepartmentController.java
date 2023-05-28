@@ -2,13 +2,13 @@ package com.yulam.acalib.controller;
 
 import com.yulam.acalib.model.domain.Department;
 import com.yulam.acalib.model.domain.Faculty;
-import com.yulam.acalib.model.dto.department.DepartmentDto;
+import com.yulam.acalib.model.dto.DepartmentDto;
 import com.yulam.acalib.model.mapper.DepartmentMapper;
 import com.yulam.acalib.model.mapper.FacultyMapper;
 import com.yulam.acalib.model.response.other.DeleteIdsDto;
 import com.yulam.acalib.model.response.other.DeleteResponse;
-import com.yulam.acalib.model.view.department.DepartmentView;
-import com.yulam.acalib.model.view.faculty.FacultyView;
+import com.yulam.acalib.model.view.DepartmentView;
+import com.yulam.acalib.model.view.FacultyView;
 import com.yulam.acalib.service.DepartmentService;
 import com.yulam.acalib.service.FacultyService;
 import lombok.extern.slf4j.Slf4j;

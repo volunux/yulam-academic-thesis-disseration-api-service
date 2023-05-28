@@ -24,8 +24,8 @@ INSERT INTO country
         (13,'Bahrain','BAH'),
         (14,'Bangladesh','BNG'),
         (15,'Barbados','BAR'),
-        (16,'Belarus','BEL'),
-        (17,'Belgium','BLG'),
+        (16,'Belarus','BLR'),
+        (17,'Belgium','BEL'),
         (18,'Belize','BLZ'),
         (19,'Benin','BEN'),
         (20,'Bhutan','BHU'),
@@ -34,7 +34,7 @@ INSERT INTO country
         (23,'Botswana','BOT'),
         (24,'Brazil','BRA'),
         (25,'Brunei','BRU'),
-        (26,'Bulgaria','BLG'),
+        (26,'Bulgaria','BGR'),
         (27,'Burkina Faso','BKF'),
         (28,'Burundi','BRD'),
         (29,'Cote d''Ivoire','CDV'),
@@ -135,7 +135,7 @@ INSERT INTO country
         (124,'New Zealand','NZL'),
         (125,'Nicaragua','NIC'),
         (126,'Niger','NGR'),
-        (127,'Nigeria','NIG'),
+        (127,'Nigeria','NGA'),
         (128,'North Korea','NOK'),
         (129,'North Macedonia','NMA'),
         (130,'Norway','NOR'),
@@ -203,6 +203,6 @@ INSERT INTO country
         (192,'Vietnam','VIE'),
         (193,'Yemen','YEM'),
         (194,'Zambia','ZAM'),
-        (195,'Zimbabwe','ROM');
+        (195,'Zimbabwe','ZWE');
 
 --rollback DELETE FROM "country";

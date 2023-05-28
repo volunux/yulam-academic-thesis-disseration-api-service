@@ -1,7 +1,7 @@
 package com.yulam.acalib.service;
 
 import com.yulam.acalib.model.domain.Country;
-import com.yulam.acalib.model.dto.country.CountryDto;
+import com.yulam.acalib.model.dto.CountryDto;
 import com.yulam.acalib.model.response.other.DeleteIdsDto;
 
 import java.util.List;

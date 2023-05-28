@@ -1,4 +1,4 @@
-package com.yulam.acalib.model.view.country;
+package com.yulam.acalib.model.view;
 
 import lombok.*;
 
@@ -9,13 +9,11 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CountryView {
+public class PaymentMethodView {
 
   private Integer id;
   private String title;
-  private String code;
-  private Integer foundingYear;
-  private String mapLogoUrl;
+  private String description;
   private LocalDateTime createdOn;
   private LocalDateTime updatedOn;
 }

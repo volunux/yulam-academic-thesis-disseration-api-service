@@ -2,7 +2,7 @@ package com.yulam.acalib.service.impl;
 
 import com.yulam.acalib.exception.DepartmentNotFoundException;
 import com.yulam.acalib.model.domain.Department;
-import com.yulam.acalib.model.dto.department.DepartmentDto;
+import com.yulam.acalib.model.dto.DepartmentDto;
 import com.yulam.acalib.model.response.other.DeleteIdsDto;
 import com.yulam.acalib.repository.jpa.DepartmentJpaRepository;
 import com.yulam.acalib.service.DepartmentService;

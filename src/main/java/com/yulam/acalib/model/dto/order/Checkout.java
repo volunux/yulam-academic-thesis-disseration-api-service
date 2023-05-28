@@ -17,7 +17,5 @@ public class Checkout {
   private String contactAddress;
   private String zip;
   private Integer paymentMethod;
-  private Integer deliveryMethod;
-
 
 }

@@ -2,7 +2,7 @@ package com.yulam.acalib.service.impl;
 
 import com.yulam.acalib.exception.CountryNotFoundException;
 import com.yulam.acalib.model.domain.Country;
-import com.yulam.acalib.model.dto.country.CountryDto;
+import com.yulam.acalib.model.dto.CountryDto;
 import com.yulam.acalib.model.response.other.DeleteIdsDto;
 import com.yulam.acalib.repository.jpa.CountryJpaRepository;
 import com.yulam.acalib.service.CountryService;

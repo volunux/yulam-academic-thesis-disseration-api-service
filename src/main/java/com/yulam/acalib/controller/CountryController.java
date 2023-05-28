@@ -1,11 +1,11 @@
 package com.yulam.acalib.controller;
 
 import com.yulam.acalib.model.domain.Country;
-import com.yulam.acalib.model.dto.country.CountryDto;
+import com.yulam.acalib.model.dto.CountryDto;
 import com.yulam.acalib.model.mapper.CountryMapper;
 import com.yulam.acalib.model.response.other.DeleteIdsDto;
 import com.yulam.acalib.model.response.other.DeleteResponse;
-import com.yulam.acalib.model.view.country.CountryView;
+import com.yulam.acalib.model.view.CountryView;
 import com.yulam.acalib.service.CountryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;

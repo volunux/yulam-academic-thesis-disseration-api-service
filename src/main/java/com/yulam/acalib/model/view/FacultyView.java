@@ -1,4 +1,4 @@
-package com.yulam.acalib.model.view.faculty;
+package com.yulam.acalib.model.view;
 
 import lombok.*;
 

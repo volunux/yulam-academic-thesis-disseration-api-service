@@ -1,7 +1,7 @@
 package com.yulam.acalib.model.mapper;
 
 import com.yulam.acalib.model.domain.Department;
-import com.yulam.acalib.model.view.department.DepartmentView;
+import com.yulam.acalib.model.view.DepartmentView;
 
 import javax.validation.constraints.NotNull;
 import java.util.Collections;

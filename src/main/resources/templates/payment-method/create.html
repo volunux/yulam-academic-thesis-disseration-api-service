@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${title}"></title>
+</head>
+<body>
+
+<h1 th:text="${title}"></h1>
+
+<form th:object="${formData}" th:action="${requestUri}" method="post" autocomplete="off" enctype="application/x-www-form-urlencoded" id="create-country" name="create-country">
+
+  <div>
+    <label for="title" title="Title">Title</label>
+    <input id="title" type="text" required="required" th:name="title" th:value="${formData.title} ?: ''">
+    <ul th:if="${#fields.hasErrors('title')}">
+      <li th:each="error: ${#fields.errors('title')}" th:text="${error}"></li>
+    </ul>
+  </div>
+
+  <div>
+    <label for="code" title="Code">Code</label>
+    <input id="code" type="text" required="required" th:name="code" th:value="${formData.code} ?: ''">
+    <ul th:if="${#fields.hasErrors('code')}">
+      <li th:each="error: ${#fields.errors('code')}" th:text="${error}"></li>
+    </ul>
+  </div>
+
+  <div>
+    <label for="founding-year" title="Founding Year">Founding Year</label>
+    <input id="founding-year" type="text" required="required" th:name="foundingYear" th:value="${formData.foundingYear} ?: ''">
+    <ul th:if="${#fields.hasErrors('foundingYear')}">
+      <li th:each="error: ${#fields.errors('foundingYear')}" th:text="${error}"></li>
+    </ul>
+  </div>
+
+  <div>
+    <label for="map-logo-url" title="Map Url">Map Url</label>
+    <input id="map-logo-url" type="text" required="required" th:name="mapLogoUrl" th:value="${formData.mapLogoUrl} ?: ''">
+    <ul th:if="${#fields.hasErrors('mapLogoUrl')}">
+      <li th:each="error: ${#fields.errors('mapLogoUrl')}" th:text="${error}"></li>
+    </ul>
+  </div>
+
+
+  <input type="submit" value="Submit"/>
+
+</form>
+
+</body>
+</html>

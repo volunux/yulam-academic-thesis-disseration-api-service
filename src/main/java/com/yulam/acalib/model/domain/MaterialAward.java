@@ -10,7 +10,9 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "material_award")
+@Table(name = "material_award", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"code"})
+})
 public class MaterialAward {
 
   @Id
