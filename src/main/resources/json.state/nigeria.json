@@ -1,0 +1,614 @@
+[
+  {
+    "info": {
+      "officialName": "Abia",
+      "governor": "Okezie Ikpeazu",
+      "deputygovernor": "Ude Okochukwu",
+      "population": 3727347,
+      "slogan": "God's Own State",
+      "capital": "Umuahia",
+      "area": 6320,
+      "latitude": "5.532003041",
+      "longitude": "7.486002487",
+      "numberOfLgas": 17,
+      "dateCreated": "1991-08-27",
+      "website": "abiastate.gov.ng"
+    },
+    "Name": "abia"
+  },
+  {
+    "info": {
+      "officialName": "Adamawa",
+      "governor": "Bindo Jibrilla",
+      "deputygovernor": "Martin Babale",
+      "population": 4248436,
+      "slogan": "Land of Beauty, Sunshine and Hospitality",
+      "capital": "Yola",
+      "area": 36917,
+      "latitude": "10.2703408",
+      "longitude": "13.2700321",
+      "numberOfLgas": 21,
+      "dateCreated": "1991-08-27",
+      "website": "www.adamawastate.gov.ng"
+    },
+    "Name": "adamawa"
+  },
+  {
+    "info": {
+      "officialName": "Akwa Ibom",
+      "governor": "Udom Gabriel Emmanuel",
+      "deputygovernor": "Moses Frank Ekpo",
+      "population": 5482177,
+      "slogan": "Land of Promise",
+      "capital": "Uyo",
+      "area": 7081,
+      "latitude": "5.007996056",
+      "longitude": "7.849998524",
+      "numberOfLgas": 31,
+      "dateCreated": "1987-09-23",
+      "website": "akwaibomstate.gov.ng"
+    },
+    "Name": "akwaibom"
+  },
+  {
+    "info": {
+      "officialName": "Anambra",
+      "governor": "Willie Obiano",
+      "deputygovernor": "Nkem Okeke",
+      "population": 5527809,
+      "slogan": "Light of the nation",
+      "capital": "Awka",
+      "area": 4844,
+      "latitude": "6.210433572",
+      "longitude": "7.06999711",
+      "numberOfLgas": 21,
+      "dateCreated": "1991-08-26",
+      "website": "anambrastate.gov.ng"
+    },
+    "Name": "anambra"
+  },
+  {
+    "info": {
+      "officialName": "Bauchi",
+      "governor": "Mohammed Abdullahi Abubakar",
+      "deputygovernor": "Nuhu Gidado",
+      "population": 6537314,
+      "slogan": "Pearl of Tourism",
+      "capital": "Bauchi",
+      "area": 49119,
+      "latitude": "10.3103642",
+      "longitude": "9.84000891",
+      "numberOfLgas": 20,
+      "dateCreated": "1976-02-03",
+      "website": "www.bauchistate.gov.ng"
+    },
+    "Name": "bauchi"
+  },
+  {
+    "info": {
+      "officialName": "Bayelsa",
+      "governor": "Henry Dickson",
+      "deputygovernor": "Gboribiogha John Jonah",
+      "population": 2277961,
+      "slogan": "Glory of all lands",
+      "capital": "Yenagoa",
+      "area": 21110,
+      "latitude": "4.664030",
+      "longitude": "6.036987",
+      "numberOfLgas": 8,
+      "dateCreated": "1996-10-01",
+      "website": "www.bayelsa.gov.ng"
+    },
+    "Name": "bayelsa"
+  },
+  {
+    "info": {
+      "officialName": "Benue",
+      "governor": "Samuel Ortom",
+      "deputygovernor": "Benson Abounu",
+      "population": 5741815,
+      "slogan": "Food Basket of the Nation",
+      "capital": "Makurdi",
+      "area": 34059,
+      "latitude": "7.729979064",
+      "longitude": "8.530011351",
+      "numberOfLgas": 23,
+      "dateCreated": "1976-02-03",
+      "website": "www.benuestate.gov.ng"
+    },
+    "Name": "benue"
+  },
+  {
+    "info": {
+      "officialName": "Borno",
+      "governor": "Kashim Shettima",
+      "deputygovernor": "Usman Mamman Durkwa",
+      "population": 5860183,
+      "slogan": "Home of Peace",
+      "capital": "Maiduguri",
+      "area": 57799,
+      "latitude": "10.62042279",
+      "longitude": "12.18999467",
+      "numberOfLgas": 27,
+      "dateCreated": "1976-02-03",
+      "website": "www.bornostate.gov.ng"
+    },
+    "Name": "borno"
+  },
+  {
+    "info": {
+      "officialName": "Cross River",
+      "governor": "Benedict Ayade",
+      "deputygovernor": "Ivara Esu",
+      "population": 3866269,
+      "slogan": "The People's Paradise",
+      "capital": "Calabar",
+      "area": 20156,
+      "latitude": "4.960406513",
+      "longitude": "8.330023558",
+      "numberOfLgas": 18,
+      "dateCreated": "1967-05-26",
+      "website": "www.crossriverstate.gov.ng"
+    },
+    "Name": "crossriver"
+  },
+  {
+    "info": {
+      "officialName": "Delta",
+      "governor": "Arthur Okowa Ifeanyi",
+      "deputygovernor": "Kingsley Otuaro",
+      "population": 5663362,
+      "slogan": "The Big Heart of the Nation",
+      "capital": "Asaba",
+      "area": 17698,
+      "latitude": "5.890427265",
+      "longitude": "5.680004434",
+      "numberOfLgas": 25,
+      "dateCreated": "1991-08-26",
+      "website": "www.deltastate.gov.ng"
+    },
+    "Name": "delta"
+  },
+  {
+    "info": {
+      "officialName": "Ebonyi",
+      "governor": "Dave Umahi",
+      "deputygovernor": "Eric Kelechi Igwe",
+      "population":2880383,
+      "slogan": "Salt of the Nation",
+      "capital": "Abakaliki",
+      "area": 5533,
+      "latitude": "6.177973",
+      "longitude": "7.959286",
+      "numberOfLgas": 13,
+      "dateCreated": "1996-10-01",
+      "website": "www.ebonyistate.gov.ng"
+    },
+    "Name": "ebonyi"
+  },
+  {
+    "info": {
+      "officialName": "Edo",
+      "governor": "Godwin Obaseki",
+      "deputygovernor": "Philip Shuaibu",
+      "population": 4235595,
+      "slogan": "The Heartbeat of the Nation",
+      "capital": "Benin City",
+      "area": 17802,
+      "latitude": "6.340477314",
+      "longitude": "5.620008096",
+      "numberOfLgas": 18,
+      "dateCreated": "1991-08-26",
+      "website": "edostate.gov.ng"
+    },
+    "Name": "edo"
+  },
+  {
+    "info": {
+      "officialName": "Ekiti",
+      "governor": "Ayo Fayose",
+      "deputygovernor": "Kolapo Olubunmi Olusola",
+      "population": 3270798,
+      "slogan": "Land of Honour",
+      "capital": "Ado Ekiti",
+      "area": 6353,
+      "latitude": "7.630372741",
+      "longitude": " 5.219980834",
+      "numberOfLgas": 16,
+      "dateCreated": "1996-09-30",
+      "website": "www.ekitistate.gov.ng"
+    },
+    "Name": "ekiti"
+  },
+  {
+    "info": {
+      "officialName": "Enugu",
+      "governor": "Ifeanyi Ugwuanyi",
+      "deputygovernor": "Cecilia Ezeilo",
+      "population": 4411119,
+      "slogan": "Coal city state",
+      "capital": "Enugu",
+      "area": 7161,
+      "latitude": "6.867034321",
+      "longitude": "7.383362995",
+      "numberOfLgas": 17,
+      "dateCreated": "1991-08-26",
+      "website": "enugustate.gov.ng"
+    },
+    "Name": "enugu"
+  },
+  {
+    "info": {
+      "officialName": "Gombe",
+      "governor": "Ibrahim Hassan Dankwambo",
+      "deputygovernor": "Charles Iliya",
+      "population": 3256962,
+      "slogan": "Jewel in the Savannah",
+      "capital": "Gombe",
+      "area": 18768,
+      "latitude": "10.29044293",
+      "longitude": "11.16995357",
+      "numberOfLgas": 11,
+      "dateCreated": "1996-09-30",
+      "website": "www.gombestate.gov.ng"
+    },
+    "Name": "gombe"
+  },
+  {
+    "info": {
+      "officialName": "Imo",
+      "governor": "Rochas Anayo Okorocha",
+      "deputygovernor": "Prince Eze Madumere",
+      "population": 5408756,
+      "slogan": "The Eastern Heartland",
+      "capital": "Owerri",
+      "area": 5530,
+      "latitude": "5.492997053",
+      "longitude": " 7.026003588",
+      "numberOfLgas": 27,
+      "dateCreated": "1976-02-03",
+      "website": "www.imostate.gov.ng"
+    },
+    "Name": "imo"
+  },
+  {
+    "info": {
+      "officialName": "Jigawa",
+      "governor": "Badaru Abubakar",
+      "deputygovernor": "Ibrahim Hassan Hadejia",
+      "population": 5828163,
+      "slogan": "The New World",
+      "capital": "Dutse",
+      "area": 23154,
+      "latitude": "11.7991891",
+      "longitude": "9.350334607",
+      "numberOfLgas": 27,
+      "dateCreated": "1991-08-26",
+      "website": "jigawastate.gov.ng"
+    },
+    "Name": "jigawa"
+  },
+  {
+    "info": {
+      "officialName": "Kaduna",
+      "governor": "Nasir Ahmad el-Rufai ",
+      "deputygovernor": "Bala Bantex",
+      "population": 8252366,
+      "slogan": "Centre of Learning",
+      "capital": "Kaduna",
+      "area": 46053,
+      "latitude": "11.0799813",
+      "longitude": "7.710009724",
+      "numberOfLgas": 23,
+      "dateCreated": "1967-05-26",
+      "website": "www.kadunastate.gov.ng"
+    },
+    "Name": "kaduna"
+  },
+  {
+    "info": {
+      "officialName": "Kano",
+      "governor": "Abdullahi Umar Ganduje",
+      "deputygovernor": "Hafiz Abubakar",
+      "population": 13076892,
+      "slogan": "Centre of Commerce",
+      "capital": "Kano",
+      "area": 20131,
+      "latitude": "11.99997683",
+      "longitude": "8.5200378",
+      "numberOfLgas": 44,
+      "dateCreated": "1967-05-26",
+      "website": "kano.gov.ng"
+    },
+    "Name": "kano"
+  },
+  {
+    "info": {
+      "officialName": "Katsina",
+      "governor": "Aminu Bello Masari",
+      "deputygovernor": "Mannir Yakubu",
+      "population": 7831319,
+      "slogan": "Home of Hospitality",
+      "capital": "Katsina",
+      "area": 24192,
+      "latitude": "11.5203937",
+      "longitude": "7.320007689",
+      "numberOfLgas": 34,
+      "dateCreated": "1987-09-23",
+      "website": "www.katsinastate.gov.ng"
+    },
+    "Name": "katsina"
+  },
+  {
+    "info": {
+      "officialName": "Kebbi",
+      "governor": "Abubakar Atiku Bagudu",
+      "deputygovernor": "Samaila Yombe Dabai",
+      "population": 4440050,
+      "slogan": "Land of Equity",
+      "capital": "Birnin Kebbi",
+      "area": 36800,
+      "latitude": "12.45041445",
+      "longitude": "4.199939737",
+      "numberOfLgas": 21,
+      "dateCreated": "1991-08-26",
+      "website": "services.gov.ng/kebbi"
+    },
+    "Name": "kebbi"
+  },
+  {
+    "info": {
+      "officialName": "Kogi",
+      "governor": "Yahaya Bello ",
+      "deputygovernor": "Simon Achuba",
+      "population": 4473490,
+      "slogan": "The Confluence State",
+      "capital": "Lokoja",
+      "area": 29833,
+      "latitude": "7.800388203",
+      "longitude": "6.739939737",
+      "numberOfLgas": 21,
+      "dateCreated": "1991-08-26",
+      "website": "www.kogistate.gov.ng"
+    },
+    "Name": "kogi"
+  },
+  {
+    "info": {
+      "officialName": "Kwara",
+      "governor": "Abdulfatah Ahmed",
+      "deputygovernor": "Peter Kisira",
+      "population": 3192893,
+      "slogan": "State of Harmony",
+      "capital": "Ilorin",
+      "area": 36825,
+      "latitude": "8.490010192",
+      "longitude": "4.549995889",
+      "numberOfLgas": 16,
+      "dateCreated": "1967-05-26",
+      "website": "kwarastate.gov.ng"
+    },
+    "Name": "kwara"
+  },
+  {
+    "info": {
+      "officialName": "Lagos",
+      "governor": "Akinwunmi Ambode",
+      "deputygovernor": "Oluranti Adebule",
+      "population": 12550598,
+      "slogan": "Centre Of Excellence",
+      "capital": "Ikeja",
+      "area": 3577,
+      "latitude": "6.443261653",
+      "longitude": "3.391531071",
+      "numberOfLgas": 20,
+      "dateCreated": "1967-05-26",
+      "website": "lagosstate.gov.ng"
+    },
+    "Name": "lagos"
+  },
+  {
+    "info": {
+      "officialName": "Nasarawa",
+      "governor": "Umaru Tanko Al-Makura",
+      "deputygovernor": "Silas Ali Agara",
+      "population": 2523395,
+      "slogan": "Home of Solid Minerals",
+      "capital": "Lafia",
+      "area": 27117,
+      "latitude": "8.490423603",
+      "longitude": "8.5200378",
+      "numberOfLgas": 13,
+      "dateCreated": "1996-09-30",
+      "website": "www.nasarawastate.gov.ng"
+    },
+    "Name": "nasarawa"
+  },
+  {
+    "info": {
+      "officialName": "Niger",
+      "governor": "Abubakar Sani Bello",
+      "deputygovernor": "Ahmed Muhammad Ketso",
+      "population": 5556247 ,
+      "slogan": "The Power State",
+      "capital": "Minna",
+      "area": 76363,
+      "latitude": "10.4003587",
+      "longitude": "5.469939737",
+      "numberOfLgas": 25,
+      "dateCreated": "1996-09-30",
+      "website": "www.nigerstate.gov.ng"
+    },
+    "Name": "niger"
+  },
+  {
+    "info": {
+      "officialName": "Ogun",
+      "governor": "Ibikunle Amosun",
+      "deputygovernor": "Yetunde Onanuga",
+      "population": 5217716,
+      "slogan": "Gateway State",
+      "capital": "Abeokuta",
+      "area": 16980.55,
+      "latitude": "7.160427265",
+      "longitude": "3.350017455",
+      "numberOfLgas": 20,
+      "dateCreated": "1976-02-02",
+      "website": "www.ogunstate.gov.ng"
+    },
+    "Name": "ogun"
+  },
+  {
+    "info": {
+      "officialName": "Ondo",
+      "governor": "Oluwarotimi Odunayo Akeredolu",
+      "deputygovernor": "Agboola Ajayi",
+      "population": 4671695,
+      "slogan": "Sunshine State",
+      "capital": "Akure",
+      "area": 15500,
+      "latitude": "7.250395934",
+      "longitude": " 5.199982054",
+      "numberOfLgas": 18,
+      "dateCreated": "1976-02-02",
+      "website": "www.ondostate.gov.ng"
+    },
+    "Name": "ondo"
+  },
+  {
+    "info": {
+      "officialName": "Osun",
+      "governor": "Rauf Aregbesola",
+      "deputygovernor": "Grace Titilayo Laoye-Tomori",
+      "population": 4705589,
+      "slogan": "Land of Virtue",
+      "capital": "Osogbo",
+      "area": 9251,
+      "latitude": "7.629959329",
+      "longitude": "4.179992634",
+      "numberOfLgas": 30,
+      "dateCreated": "1991-08-26",
+      "website": "osun.gov.ng"
+    },
+    "Name": "osun"
+  },
+  {
+    "info": {
+      "officialName": "Oyo",
+      "governor": "Isiaka Abiola Ajimobi",
+      "deputygovernor": "Moses Alake Adeyemo",
+      "population": 7840864,
+      "slogan": "Pace Setter State",
+      "capital": "Ibadan",
+      "area": 28454,
+      "latitude": "7.970016092",
+      "longitude": "3.590002806",
+      "numberOfLgas": 33,
+      "dateCreated": "1976-02-02",
+      "website": "oyostate.gov.ng"
+    },
+    "Name": "oyo"
+  },
+  {
+    "info": {
+      "officialName": "Plateau",
+      "governor": "Simon Lalong",
+      "deputygovernor": "Sonni Gwanle Tyoden",
+      "population": 4200442,
+      "slogan": "Home of Peace and Tourism",
+      "capital": "Jos",
+      "area": 30913,
+      "latitude": "9.929973978",
+      "longitude": "8.890041055",
+      "numberOfLgas": 17,
+      "dateCreated": "1976-02-02",
+      "website": "plateaustate.gov.ng"
+    },
+    "Name": "plateau"
+  },
+  {
+    "info": {
+      "officialName": "Rivers",
+      "governor": "Ezenwo Nyesom Wike",
+      "deputygovernor": "Ipalibo Banigo",
+      "population": 7303924,
+      "slogan": "Treasure Base of the Nation",
+      "capital": "Port Harcourt",
+      "area": 11077,
+      "latitude": "4.810002257",
+      "longitude": "7.010000772",
+      "numberOfLgas": 23,
+      "dateCreated": "1967-05-26",
+      "website": "riversstate.gov.ng"
+    },
+    "Name": "rivers"
+  },
+  {
+    "info": {
+      "officialName": "Sokoto",
+      "governor": "Aminu Waziri Tambuwal",
+      "deputygovernor": "Ahmad Aliyu",
+      "population": 4998090,
+      "slogan": "Seat of the Caliphate",
+      "capital": "Sokoto",
+      "area": 25973,
+      "latitude": "13.06001548",
+      "longitude": "5.240031289",
+      "numberOfLgas": 23,
+      "dateCreated": "1976-02-02",
+      "website": "services.gov.ng/sokoto"
+    },
+    "Name": "sokoto"
+  },
+  {
+    "info": {
+      "officialName": "Taraba",
+      "governor": "Darius Ishaku",
+      "deputygovernor": "Haruna Manu",
+      "population": 3066834,
+      "slogan": "Nature's Gift to the Nation",
+      "capital": "Jalingo",
+      "area": 54473,
+      "latitude": "7.870409769",
+      "longitude": "9.780012572",
+      "numberOfLgas": 16,
+      "dateCreated": "1991-08-26",
+      "website": "services.gov.ng/taraba"
+    },
+    "Name": "taraba"
+  },
+  {
+    "info": {
+      "officialName": "Yobe",
+      "governor": "Ibrahim Geidam",
+      "deputygovernor": "Abubakar Ali",
+      "population": 3294137,
+      "slogan": "Pride of the Sahel",
+      "capital": "Damaturu",
+      "area": 45502,
+      "latitude": "11.74899608",
+      "longitude": "11.96600457",
+      "numberOfLgas": 17,
+      "dateCreated": "1991-08-26",
+      "website": "yobestate.gov.ng"
+    },
+    "Name": "yobe"
+  },
+  {
+    "info": {
+      "officialName": "Zamfara",
+      "governor": "Abdul-Aziz Yari Abubakar",
+      "deputygovernor": "Ibrahim Wakkala",
+      "population": 4515427,
+      "slogan": "Farming is Our Pride",
+      "capital": "Gusau",
+      "area": 39762,
+      "latitude": "12.1704057",
+      "longitude": "6.659996296",
+      "numberOfLgas": 14,
+      "dateCreated": "1996-09-30",
+      "website": "services.gov.ng/zamfara"
+    },
+    "Name": "zamfara"
+  }
+]

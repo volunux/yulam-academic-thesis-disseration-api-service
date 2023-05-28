@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${title}"></title>
+</head>
+<body>
+
+<h2 class="bold" th:text="${title}"></h2>
+
+<div id ="table-curves">
+
+  <table id ='entry-detail'>
+    <colgroup>
+      <col class ='parameter'/>
+      <col class ='model-data'/>
+    </colgroup>
+
+    <tbody>
+      <tr>
+        <th>Title</th>
+        <td th:text="${department.title} ?: 'Not Available'"></td>
+      </tr>
+
+      <tr>
+        <th>Code</th>
+        <td th:text="${department.code} ?: 'Not Available'"></td>
+      </tr>
+
+      <tr>
+        <th>Faculty</th>
+        <td th:text="${department?.faculty?.title} ?: 'Not Available'"></td>
+      </tr>
+
+    <tr>
+      <th>Description</th>
+      <td th:text="${department.description} ?: 'Not Available'"></td>
+    </tr>
+
+    <tr>
+      <th>Created On</th>
+      <td th:text="${#temporals.format(department.createdOn, 'MMMM d, yyyy')} ?: 'Not Available'"></td>
+    </tr>
+
+    <tr>
+      <th>Updated On</th>
+      <td th:text="${#temporals.format(department.updatedOn, 'MMMM d, yyyy')} ?: 'Not Available'"></td>
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>
+
+</body>
+</html>

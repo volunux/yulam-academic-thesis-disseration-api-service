@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${title}"></title>
+</head>
+<body>
+
+<h1 th:text="${title}"></h1>
+
+<form th:object="${formData}" th:action="${requestUri}" method="post" autocomplete="off" enctype="application/x-www-form-urlencoded" name="create-department">
+
+  <div>
+    <label for="title" title="Title">Title</label>
+    <input id="title" type="text" required="required" th:name="title" th:value="${formData.title} ?: ''">
+    <ul th:if="${#fields.hasErrors('title')}">
+      <li th:each="error: ${#fields.errors('title')}" th:text="${error}"></li>
+    </ul>
+  </div>
+
+  <div>
+    <label for="code" title="Code">Code</label>
+    <input id="code" type="text" required="required" th:name="code" th:value="${formData.code} ?: ''">
+    <div th:replace="fragment/validation-error/index :: formField('code')"></div>
+  </div>
+
+  <div>
+    <label for="faculty" title="Faculty">Faculty</label>
+    <select id="faculty" required="required" th:name="faculty">
+      <option th:value="0">Select a Faculty...</option>
+      <option th:each="faculty: ${faculties}" th:value="${faculty.id}" th:text="${faculty.title}" th:selected="${faculty.id == formData.faculty}"></option>
+    </select>
+    <ul th:if="${#fields.hasErrors('faculty')}">
+      <li th:each="error: ${#fields.errors('faculty')}" th:text="${error}"></li>
+    </ul>
+  </div>
+
+  <div>
+    <label for="description" title="description">Description</label>
+    <textarea id="description" required="required" th:name="description" th:text="${formData.description} ?: ''"></textarea>
+    <ul th:if="${#fields.hasErrors('description')}">
+      <li th:each="error: ${#fields.errors('description')}" th:text="${error}"></li>
+    </ul>
+  </div>
+
+  <input type="submit" value="Submit"/>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+<ul th:fragment="formField (field)" >
+  <div th:if="${#fields.hasErrors(field)}">
+    <li th:each="error: ${#fields.errors(field)}" th:text="${error}"></li>
+  </div>
+</ul>
