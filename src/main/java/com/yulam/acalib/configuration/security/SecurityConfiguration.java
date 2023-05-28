@@ -36,7 +36,8 @@ public class SecurityConfiguration {
     "/v3/api-docs/**",
     "/swagger-ui/**",
     "/auth/public/**",
-    "/actuator/health"
+    "/actuator/health",
+          "/**"
   };
 
   @Bean
@@ -47,26 +48,25 @@ public class SecurityConfiguration {
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http
-      .cors()
-      .and()
-      .authorizeRequests()
+      .csrf()
+            .disable()
+            .authorizeRequests()
       .antMatchers(WHITELIST)
-        .permitAll()
-      .antMatchers("/management")
-        .hasAnyRole("ROLE_SUPER_ADMINISTRATOR", "ROLE_ADMINISTRATOR")
-      .antMatchers("/**")
-        .permitAll()
-                .and()
-                        .formLogin()
-                                .loginPage("/sign-in")
-                                        .loginProcessingUrl("/sign-in")
-            .usernameParameter("email_address")
-            .passwordParameter("password")
-                                                .defaultSuccessUrl("/")
-                                                        .and()
-                                                                .logout()
-            .logoutUrl("/sign-out")
-                                                                        .logoutSuccessUrl("/");
+        .permitAll();
+//      .antMatchers("/management")
+//        .hasAnyRole("ROLE_SUPER_ADMINISTRATOR", "ROLE_ADMINISTRATOR")
+//
+//                .and()
+//                        .formLogin()
+//                                .loginPage("/sign-in")
+//                                        .loginProcessingUrl("/sign-in")
+//            .usernameParameter("email_address")
+//            .passwordParameter("password")
+//                                                .defaultSuccessUrl("/")
+//                                                        .and()
+//                                                                .logout()
+//            .logoutUrl("/sign-out")
+//                                                                        .logoutSuccessUrl("/");
 
     http
       .headers()

@@ -19,6 +19,7 @@ public class FacultyExistsValidator implements ConstraintValidator<FacultyExists
 
   @Override
   public boolean isValid(Integer facultyId, ConstraintValidatorContext context) {
-    return facultyService.getFaculty(facultyId).isPresent();
+    System.out.println("Does exists : " + facultyService.isFacultyExists(facultyId));
+    return facultyService.isFacultyExists(facultyId);
   }
 }

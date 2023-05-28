@@ -22,13 +22,13 @@ public class ShoppingCartController {
     return new ShoppingCart();
   }
 
-  @PostMapping
+  @PostMapping(value = "add-item")
   public void addItem(@Valid OrderItemDto dto,
                       @ModelAttribute ShoppingCart cart) {
     cart.getOrderItemDtos().add(dto);
   }
 
-  @PostMapping
+  @PostMapping(value = "process")
   public void processOrder(@Valid ShoppingCart cart, BindingResult bindingResult, SessionStatus sessionStatus) {
     sessionStatus.setComplete();
   }

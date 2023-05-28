@@ -2,6 +2,7 @@ package com.yulam.acalib.service;
 
 import com.yulam.acalib.model.domain.Department;
 import com.yulam.acalib.model.dto.department.DepartmentDto;
+import com.yulam.acalib.model.response.other.DeleteIdsDto;
 
 import java.util.List;
 
@@ -15,7 +16,9 @@ public interface DepartmentService {
 
   Department updateDepartment(Integer id, DepartmentDto dto);
 
-  boolean deleteMany(List<Integer> ids);
+  boolean deleteMany(DeleteIdsDto dto);
 
   boolean deleteAllDepartment();
+
+  boolean isDepartmentExists(Integer id);
 }

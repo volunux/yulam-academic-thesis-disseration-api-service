@@ -1,16 +1,18 @@
 package com.yulam.acalib.controller;
 
-import com.yulam.acalib.exception.DepartmentNotFoundException;
 import com.yulam.acalib.model.domain.Department;
 import com.yulam.acalib.model.domain.Faculty;
 import com.yulam.acalib.model.dto.department.DepartmentDto;
 import com.yulam.acalib.model.mapper.DepartmentMapper;
 import com.yulam.acalib.model.mapper.FacultyMapper;
+import com.yulam.acalib.model.response.other.DeleteIdsDto;
+import com.yulam.acalib.model.response.other.DeleteResponse;
 import com.yulam.acalib.model.view.department.DepartmentView;
 import com.yulam.acalib.model.view.faculty.FacultyView;
 import com.yulam.acalib.service.DepartmentService;
 import com.yulam.acalib.service.FacultyService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,7 +25,7 @@ import java.util.List;
 @Slf4j
 @Controller
 @RequestMapping(value = "/department")
-public class DepartmentController {
+public class DepartmentController extends ControllerConfig {
 
   private final DepartmentService departmentService;
   private final FacultyService facultyService;
@@ -31,11 +33,6 @@ public class DepartmentController {
   public DepartmentController(DepartmentService departmentService, FacultyService facultyService) {
     this.departmentService = departmentService;
     this.facultyService = facultyService;
-  }
-
-  @GetMapping("/error")
-  public String goal() {
-    throw new DepartmentNotFoundException("Not Found Department");
   }
 
   @GetMapping
@@ -67,7 +64,7 @@ public class DepartmentController {
   @GetMapping(value = "/create")
   public String add(Model model) {
 
-    model.addAttribute("title", getCreateDepartmentViewTitle());
+    model.addAttribute("title", getCreateViewTitle());
     model.addAttribute("faculties", getFacultyViews());
     model.addAttribute("formData", DepartmentDto.builder().build());
     return "department/create";
@@ -79,7 +76,7 @@ public class DepartmentController {
                      RedirectAttributes redirectAttributes) {
 
     if (bindingResult.hasErrors()) {
-      model.addAttribute("title", getCreateDepartmentViewTitle());
+      model.addAttribute("title", getCreateViewTitle());
       model.addAttribute("faculties", getFacultyViews());
 
       return "department/create";
@@ -87,8 +84,8 @@ public class DepartmentController {
 
     departmentService.saveDepartment(dto);
 
-    redirectAttributes.addAttribute("message", "Success");
-    return "redirect:".concat(getDepartmentEntriesPath());
+    redirectAttributes.addFlashAttribute(getFormProcessedMessageKey(), "Success");
+    return "redirect:".concat(getEntriesPath());
   }
 
   @GetMapping(value = "/update/{id}")
@@ -102,7 +99,7 @@ public class DepartmentController {
                     .faculty(department.getFaculty().getId())
                     .build();
 
-    model.addAttribute("title", getUpdateDepartmentViewTitle());
+    model.addAttribute("title", getUpdateViewTitle());
     model.addAttribute("faculties", getFacultyViews());
     model.addAttribute("formData", dto);
     return "department/create";
@@ -114,28 +111,29 @@ public class DepartmentController {
                           BindingResult bindingResult) {
 
     if (bindingResult.hasErrors()) {
-      model.addAttribute("title", getUpdateDepartmentViewTitle());
+      model.addAttribute("title", getUpdateViewTitle());
       model.addAttribute("faculties", getFacultyViews());
 
       return "department/create";
     }
 
     departmentService.updateDepartment(id, dto);
-    return "redirect:".concat(getDepartmentEntriesPath());
+    return "redirect:".concat(getEntriesPath());
   }
 
   @ResponseBody
-  @PostMapping(value ="/delete-many")
-  public String deleteMany(List<Integer> ids) {
-    departmentService.deleteMany(ids);
-    return "Successful";
+  @PostMapping(value ="/delete-many", consumes = { MediaType.APPLICATION_JSON_VALUE })
+  public DeleteResponse deleteMany(@Valid @RequestBody DeleteIdsDto dto) {
+    departmentService.deleteMany(dto);
+    return new DeleteResponse("Success", true);
   }
 
   @PostMapping(value ="/delete-all")
   public String deleteAll(RedirectAttributes redirectAttributes) {
     departmentService.deleteAllDepartment();
-    redirectAttributes.addAttribute("message", "Success");
-    return "redirect:".concat(getDepartmentBasePath());
+
+    redirectAttributes.addFlashAttribute(getFormProcessedMessageKey(), "Success");
+    return "redirect:".concat(getBasePath());
   }
 
   private List<FacultyView> getFacultyViews() {
@@ -143,19 +141,23 @@ public class DepartmentController {
     return FacultyMapper.toFacultyViews(faculties);
   }
 
-  private String getCreateDepartmentViewTitle() {
+  @Override
+  protected String getCreateViewTitle() {
     return "Create a Department";
   }
 
-  private String getUpdateDepartmentViewTitle() {
+  @Override
+  protected String getUpdateViewTitle() {
     return "Update a Department";
   }
 
-  private String getDepartmentEntriesPath() {
+  @Override
+  protected String getEntriesPath() {
     return "/department/entries";
   }
 
-  private String getDepartmentBasePath() {
+  @Override
+  protected String getBasePath() {
     return "/department";
   }
 }

@@ -3,6 +3,7 @@ package com.yulam.acalib.service.impl;
 import com.yulam.acalib.exception.DepartmentNotFoundException;
 import com.yulam.acalib.model.domain.Department;
 import com.yulam.acalib.model.dto.department.DepartmentDto;
+import com.yulam.acalib.model.response.other.DeleteIdsDto;
 import com.yulam.acalib.repository.jpa.DepartmentJpaRepository;
 import com.yulam.acalib.service.DepartmentService;
 import lombok.extern.slf4j.Slf4j;
@@ -50,14 +51,16 @@ public class DepartmentServiceImpl implements DepartmentService {
   }
 
   @Override
-  public boolean deleteMany(List<Integer> ids) {
-    List<Department> departments = ids
+  public boolean deleteMany(DeleteIdsDto dto) {
+    List<Department> departments = dto
+            .getIds()
             .stream()
             .map(id -> Department.
                     builder()
                     .id(id)
                     .build())
             .collect(Collectors.toList());
+
     departmentJpaRepository.deleteAll(departments);
     return true;
   }
@@ -66,5 +69,10 @@ public class DepartmentServiceImpl implements DepartmentService {
   public boolean deleteAllDepartment() {
     departmentJpaRepository.deleteAll();
     return true;
+  }
+
+  @Override
+  public boolean isDepartmentExists(Integer id) {
+    return departmentJpaRepository.findById(id).isPresent();
   }
 }

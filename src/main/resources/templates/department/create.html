@@ -21,7 +21,9 @@
   <div>
     <label for="code" title="Code">Code</label>
     <input id="code" type="text" required="required" th:name="code" th:value="${formData.code} ?: ''">
-    <div th:replace="fragment/validation-error/index :: formField('code')"></div>
+    <ul th:if="${#fields.hasErrors('code')}">
+      <li th:each="error: ${#fields.errors('code')}" th:text="${error}"></li>
+    </ul>
   </div>
 
   <div>

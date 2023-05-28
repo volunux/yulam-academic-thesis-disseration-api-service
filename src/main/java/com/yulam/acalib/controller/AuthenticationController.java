@@ -21,12 +21,12 @@ public class AuthenticationController {
 
   }
 
-  @GetMapping
+  @GetMapping(value = "sign-up")
   public void signUp() {
 
   }
 
-  @PostMapping
+  @PostMapping(value = "process-sign-up")
   public void completeSignUp() {
 
   }
