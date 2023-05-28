@@ -1,5 +1,6 @@
 package com.yulam.acalib.controller;
 
+import com.yulam.acalib.exception.DepartmentNotFoundException;
 import com.yulam.acalib.model.domain.Department;
 import com.yulam.acalib.model.domain.Faculty;
 import com.yulam.acalib.model.dto.department.DepartmentDto;
@@ -30,6 +31,11 @@ public class DepartmentController {
   public DepartmentController(DepartmentService departmentService, FacultyService facultyService) {
     this.departmentService = departmentService;
     this.facultyService = facultyService;
+  }
+
+  @GetMapping("/error")
+  public String goal() {
+    throw new DepartmentNotFoundException("Not Found Department");
   }
 
   @GetMapping

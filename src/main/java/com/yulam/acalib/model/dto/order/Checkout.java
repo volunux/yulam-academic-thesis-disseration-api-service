@@ -18,4 +18,6 @@ public class Checkout {
   private String zip;
   private Integer paymentMethod;
   private Integer deliveryMethod;
+
+
 }
