@@ -96,7 +96,7 @@ public class DepartmentController extends ControllerConfig {
                     .title(department.getTitle())
                     .code(department.getCode())
                     .description(department.getDescription())
-                    .faculty(department.getFaculty().getId())
+                    .faculty(String.valueOf(department.getFaculty().getId()))
                     .build();
 
     model.addAttribute("title", getUpdateViewTitle());

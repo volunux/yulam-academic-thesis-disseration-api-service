@@ -16,9 +16,9 @@ public interface DepartmentService {
 
   Department updateDepartment(Integer id, DepartmentDto dto);
 
-  boolean deleteMany(DeleteIdsDto dto);
+  void deleteMany(DeleteIdsDto dto);
 
-  boolean deleteAllDepartment();
+  void deleteAllDepartment();
 
   boolean isDepartmentExists(Integer id);
 }

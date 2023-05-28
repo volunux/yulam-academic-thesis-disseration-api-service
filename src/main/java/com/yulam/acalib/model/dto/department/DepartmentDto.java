@@ -3,6 +3,7 @@ package com.yulam.acalib.model.dto.department;
 import com.yulam.acalib.model.domain.Department;
 import com.yulam.acalib.model.domain.Faculty;
 import com.yulam.acalib.validator.FacultyExists;
+import com.yulam.acalib.validator.IsNumber;
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
@@ -27,8 +28,9 @@ public class DepartmentDto {
   private String description;
 
   @NotNull
+  @IsNumber
   @FacultyExists
-  private Integer faculty;
+  private String faculty;
 
   public Department toDepartment() {
     return Department.builder()
@@ -36,7 +38,7 @@ public class DepartmentDto {
             .code(code)
             .description(code)
             .faculty(Faculty.builder()
-                    .id(faculty).build())
+                    .id(Integer.parseInt(faculty)).build())
             .build();
   }
 }

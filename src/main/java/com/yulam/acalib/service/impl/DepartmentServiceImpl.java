@@ -51,7 +51,7 @@ public class DepartmentServiceImpl implements DepartmentService {
   }
 
   @Override
-  public boolean deleteMany(DeleteIdsDto dto) {
+  public void deleteMany(DeleteIdsDto dto) {
     List<Department> departments = dto
             .getIds()
             .stream()
@@ -62,13 +62,11 @@ public class DepartmentServiceImpl implements DepartmentService {
             .collect(Collectors.toList());
 
     departmentJpaRepository.deleteAll(departments);
-    return true;
   }
 
   @Override
-  public boolean deleteAllDepartment() {
+  public void deleteAllDepartment() {
     departmentJpaRepository.deleteAll();
-    return true;
   }
 
   @Override

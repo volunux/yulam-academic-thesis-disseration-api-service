@@ -16,9 +16,9 @@ public interface FacultyService {
 
   Faculty updateFaculty(Integer id, FacultyDto dto);
 
-  boolean deleteMany(DeleteIdsDto ids);
+  void deleteMany(DeleteIdsDto ids);
 
-  boolean deleteAllFaculty();
+  void deleteAllFaculty();
 
   boolean isFacultyExists(Integer id);
 }

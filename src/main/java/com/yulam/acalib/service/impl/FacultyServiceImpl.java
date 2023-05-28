@@ -51,7 +51,7 @@ public class FacultyServiceImpl implements FacultyService {
   }
 
   @Override
-  public boolean deleteMany(DeleteIdsDto dto) {
+  public void deleteMany(DeleteIdsDto dto) {
     List<Faculty> faculties = dto
             .getIds()
             .stream()
@@ -62,13 +62,11 @@ public class FacultyServiceImpl implements FacultyService {
             .collect(Collectors.toList());
 
     facultyJpaRepository.deleteAll(faculties);
-    return true;
   }
 
   @Override
-  public boolean deleteAllFaculty() {
+  public void deleteAllFaculty() {
     facultyJpaRepository.deleteAll();
-    return true;
   }
 
   @Override
