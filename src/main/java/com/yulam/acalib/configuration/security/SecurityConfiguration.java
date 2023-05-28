@@ -52,15 +52,21 @@ public class SecurityConfiguration {
       .authorizeRequests()
       .antMatchers(WHITELIST)
         .permitAll()
-      .anyRequest()
-        .permitAll();
-//      .exceptionHandling()
-//        .authenticationEntryPoint(authenticationEntryPoint)
-//      .and()
-//      .sessionManagement()
-//        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//      .and()
-//      .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+      .antMatchers("/management")
+        .hasAnyRole("ROLE_SUPER_ADMINISTRATOR", "ROLE_ADMINISTRATOR")
+      .antMatchers("/**")
+        .permitAll()
+                .and()
+                        .formLogin()
+                                .loginPage("/sign-in")
+                                        .loginProcessingUrl("/sign-in")
+            .usernameParameter("email_address")
+            .passwordParameter("password")
+                                                .defaultSuccessUrl("/")
+                                                        .and()
+                                                                .logout()
+            .logoutUrl("/sign-out")
+                                                                        .logoutSuccessUrl("/");
 
     http
       .headers()

@@ -6,11 +6,9 @@
 </head>
 <body>
 
-<h1>Error has occured</h1>
-
-<p th:text="${errMsg}"></p>
-
-<p th:text="${timestamp}"></p>
+<form method="POST" th:action="@{/sign-out}">
+  <input type="submit" value="Logout"/>
+</form>
 
 </body>
 </html>

@@ -1,6 +1,5 @@
 package com.yulam.acalib.model.domain;
 
-
 import lombok.*;
 
 @Builder
@@ -8,13 +7,9 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderItem {
+public class MemberStatus {
 
   private Integer id;
-
-  private Double amount;
-
-  private Material material;
-
-  private Order order;
+  private String title;
+  private String description;
 }
