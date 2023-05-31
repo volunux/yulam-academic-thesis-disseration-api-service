@@ -57,13 +57,11 @@ public class DepartmentController extends ControllerConfig {
 
     model.addAttribute("title", "Department Detail");
     model.addAttribute("department", departmentView);
-
     return "department/detail";
   }
 
   @GetMapping(value = "/create")
   public String add(Model model) {
-
     model.addAttribute("title", getCreateViewTitle());
     model.addAttribute("faculties", getFacultyViews());
     model.addAttribute("formData", DepartmentDto.builder().build());
@@ -74,28 +72,23 @@ public class DepartmentController extends ControllerConfig {
   public String save(@Valid @ModelAttribute("formData") DepartmentDto dto,
                      BindingResult bindingResult, Model model,
                      RedirectAttributes redirectAttributes) {
-
     if (bindingResult.hasErrors()) {
       model.addAttribute("title", getCreateViewTitle());
       model.addAttribute("faculties", getFacultyViews());
-
       return "department/create";
     }
 
     departmentService.saveDepartment(dto);
-
-    redirectAttributes.addFlashAttribute(getFormProcessedMessageKey(), "Success");
+    this.addFormProcessedAttribute(redirectAttributes);
     return "redirect:".concat(getEntriesPath());
   }
 
   @GetMapping(value = "/update/{id}")
   public String edit(@PathVariable Integer id, Model model) {
-
     Department department = departmentService.getDepartment(id);
     DepartmentDto dto = DepartmentDto.builder()
                     .title(department.getTitle())
                     .code(department.getCode())
-                    .description(department.getDescription())
                     .faculty(String.valueOf(department.getFaculty().getId()))
                     .build();
 
@@ -107,13 +100,12 @@ public class DepartmentController extends ControllerConfig {
 
   @PostMapping(value = "/update/{id}")
   public String update(@Valid @ModelAttribute("formData") DepartmentDto dto,
-                          @PathVariable Integer id, Model model,
-                          BindingResult bindingResult) {
-
+                       BindingResult bindingResult,
+                       @PathVariable Integer id, Model model) {
+    departmentService.getDepartment(id);
     if (bindingResult.hasErrors()) {
       model.addAttribute("title", getUpdateViewTitle());
       model.addAttribute("faculties", getFacultyViews());
-
       return "department/create";
     }
 
@@ -131,8 +123,7 @@ public class DepartmentController extends ControllerConfig {
   @PostMapping(value ="/delete-all")
   public String deleteAll(RedirectAttributes redirectAttributes) {
     departmentService.deleteAllDepartment();
-
-    redirectAttributes.addFlashAttribute(getFormProcessedMessageKey(), "Success");
+    this.addFormProcessedAttribute(redirectAttributes);
     return "redirect:".concat(getBasePath());
   }
 

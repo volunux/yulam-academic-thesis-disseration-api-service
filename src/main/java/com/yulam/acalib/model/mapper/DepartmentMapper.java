@@ -19,7 +19,6 @@ public class DepartmentMapper {
             .id(department.getId())
             .title(department.getTitle())
             .code(department.getCode())
-            .description(department.getDescription())
             .createdOn(department.getCreatedOn())
             .updatedOn(department.getUpdatedOn())
             .faculty(FacultyMapper.toFacultyView(department.getFaculty()))

@@ -7,6 +7,8 @@ import com.yulam.acalib.exception.StateDuplicateEntityException;
 import com.yulam.acalib.json.StateJson;
 import com.yulam.acalib.model.domain.Country;
 import com.yulam.acalib.model.domain.State;
+import com.yulam.acalib.model.dto.StateDto;
+import com.yulam.acalib.model.response.other.DeleteIdsDto;
 import com.yulam.acalib.repository.jpa.CountryJpaRepository;
 import com.yulam.acalib.repository.jpa.StateJpaRepository;
 import com.yulam.acalib.service.StateService;
@@ -56,6 +58,41 @@ public class StateStartupService implements StateService {
         jpaRepository.save(state);
       }
     } catch (StateDuplicateEntityException ignored) { }
+  }
+
+  @Override
+  public State getState(Integer id) {
+    return null;
+  }
+
+  @Override
+  public List<State> getStates() {
+    return null;
+  }
+
+  @Override
+  public State saveState(StateDto dto) {
+    return null;
+  }
+
+  @Override
+  public State updateState(Integer id, StateDto dto) {
+    return null;
+  }
+
+  @Override
+  public void deleteMany(DeleteIdsDto dto) {
+
+  }
+
+  @Override
+  public void deleteAllState() {
+
+  }
+
+  @Override
+  public boolean isStateExists(Integer id) {
+    return false;
   }
 
 }

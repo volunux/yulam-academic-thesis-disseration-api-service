@@ -26,9 +26,9 @@ public class CountryMapper {
             .build();
   }
 
-  public static List<CountryView> toCountryViews(List<Country> faculties) {
-    if (faculties != null && !faculties.isEmpty()) {
-      return faculties
+  public static List<CountryView> toCountryViews(List<Country> countries) {
+    if (countries != null && !countries.isEmpty()) {
+      return countries
               .stream()
               .map(CountryMapper::toCountryView)
               .collect(Collectors.toList());

@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 import org.thymeleaf.spring5.ISpringTemplateEngine;
@@ -20,14 +19,7 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 @PropertySource(value = "classpath:application.properties")
 @ComponentScan(value = {"com.yulam.acalib.controller"})
 public class AcalibConfig {
-
-  @Bean
-  public ResourceBundleMessageSource messageSource() {
-    ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-    messageSource.setBasename("messages");
-    return messageSource;
-  }
-
+  
   @Bean
   public ModelMapper modelMapper() {
     ModelMapper mapper = new ModelMapper();
@@ -50,4 +42,5 @@ public class AcalibConfig {
     engine.setTemplateResolver(templateResolver);
     return engine;
   }
+
 }

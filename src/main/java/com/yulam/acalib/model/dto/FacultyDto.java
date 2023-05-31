@@ -3,7 +3,7 @@ package com.yulam.acalib.model.dto;
 import com.yulam.acalib.model.domain.Faculty;
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Builder
@@ -13,22 +13,18 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 public class FacultyDto {
 
-  @NotNull
-  @Size(min = 1, max = 200)
+  @NotBlank(message = "{faculty.title.notEmpty}")
+  @Size(min = 1, max = 200, message = "{faculty.title.size}")
   private String title;
 
-  @NotNull
-  @Size(min = 3, max = 5)
+  @NotBlank(message = "{faculty.code.notEmpty}")
+  @Size(min = 3, max = 5, message = "{faculty.code.size}")
   private String code;
-
-  @Size(min = 10, max = 1000)
-  private String description;
 
   public Faculty toFaculty() {
     return Faculty.builder()
             .title(title)
             .code(code)
-            .description(code)
             .build();
   }
 }

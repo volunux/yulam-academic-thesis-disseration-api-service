@@ -19,7 +19,6 @@ public class FacultyMapper {
             .id(faculty.getId())
             .title(faculty.getTitle())
             .code(faculty.getCode())
-            .description(faculty.getDescription())
             .createdOn(faculty.getCreatedOn())
             .updatedOn(faculty.getUpdatedOn())
             .build();

@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title th:text="${title}"></title>
 </head>
 <body>
+
+<h2 class="bold" th:text="${title}"></h2>
+
+<div id ="table-curves">
+
+  <table id ='entry-detail'>
+    <colgroup>
+      <col class ='parameter'/>
+      <col class ='model-data'/>
+    </colgroup>
+
+    <tbody>
+      <tr>
+        <th>Title</th>
+        <td th:text="${country.title} ?: 'Not Available'"></td>
+      </tr>
+
+      <tr>
+        <th>Code</th>
+        <td th:text="${country.code} ?: 'Not Available'"></td>
+      </tr>
+
+      <tr>
+        <th>Founding Year</th>
+        <td th:text="${country.foundingYear} ?: 'Not Available'"></td>
+      </tr>
+
+      <tr>
+        <th>Map Logo</th>
+        <td th:text="${country.mapLogoUrl} ?: 'Not Available'"></td>
+      </tr>
+
+      <tr>
+        <th>Created On</th>
+        <td th:text="${#temporals.format(country.createdOn, 'MMMM d, yyyy')} ?: 'Not Available'"></td>
+      </tr>
+
+      <tr>
+        <th>Updated On</th>
+        <td th:text="${#temporals.format(country.updatedOn, 'MMMM d, yyyy')} ?: 'Not Available'"></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
 
 </body>
 </html>

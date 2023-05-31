@@ -10,7 +10,7 @@ public interface CountryService {
 
   Country getCountry(Integer id);
 
-  List<Country> getFaculties();
+  List<Country> getCountries();
 
   Country saveCountry(CountryDto dto);
 

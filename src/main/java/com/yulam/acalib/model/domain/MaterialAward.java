@@ -1,8 +1,11 @@
 package com.yulam.acalib.model.domain;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Builder
 @Getter
@@ -10,9 +13,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "material_award", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"code"})
-})
+@Table(name = "material_award")
 public class MaterialAward {
 
   @Id
@@ -26,6 +27,14 @@ public class MaterialAward {
   @Column(name = "code", nullable = false, length = 20)
   private String code;
 
-  @Column(name = "description", length = 500)
-  private String description;
+  @Column(name = "award_type", nullable = false, length = 150)
+  private String awardType;
+
+  @CreationTimestamp
+  @Column(name = "created_on")
+  private LocalDateTime createdOn;
+
+  @UpdateTimestamp
+  @Column(name = "updated_on")
+  private LocalDateTime updatedOn;
 }

@@ -55,12 +55,9 @@ public class FacultyServiceImpl implements FacultyService {
     List<Faculty> faculties = dto
             .getIds()
             .stream()
-            .map(id -> Faculty.
-                    builder()
-                    .id(id)
-                    .build())
+            .map(id -> Faculty.builder()
+                    .id(id).build())
             .collect(Collectors.toList());
-
     facultyJpaRepository.deleteAll(faculties);
   }
 

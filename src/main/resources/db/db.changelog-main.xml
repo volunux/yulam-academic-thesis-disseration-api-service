@@ -5,13 +5,10 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <include relativeToChangelogFile="true" file="initialization/initialization.sql"/>
-    <include relativeToChangelogFile="true" file="initialization/country-init-1.0.sql"/>
-    <include relativeToChangelogFile="true" file="initialization/faculty-init-1.0.sql"/>
-    <include relativeToChangelogFile="true" file="initialization/department-init-1.0.sql"/>
-    <include relativeToChangelogFile="true" file="faculty-2.0.sql"/>
-    <include relativeToChangelogFile="true" file="department-2.0.sql"/>
-    <include relativeToChangelogFile="true" file="initialization/initialization-2.0.sql"/>
-    <include relativeToChangelogFile="true" file="initialization/payment-method-init-1.0.sql"/>
-    <include relativeToChangelogFile="true" file="country-2.0.sql"/>
+  <include relativeToChangelogFile="true" file="initialization/initialization.sql"/>
+  <include relativeToChangelogFile="true" file="initialization/country-init-1.0.sql"/>
+  <include relativeToChangelogFile="true" file="initialization/faculty-init-1.0.sql"/>
+  <include relativeToChangelogFile="true" file="initialization/department-init-1.0.sql"/>
+  <include relativeToChangelogFile="true" file="initialization/initialization-2.0.sql"/>
+  <include relativeToChangelogFile="true" file="initialization/payment-method-init-1.0.sql"/>
 </databaseChangeLog>

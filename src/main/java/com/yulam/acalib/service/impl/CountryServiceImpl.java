@@ -9,6 +9,7 @@ import com.yulam.acalib.service.CountryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,39 +27,42 @@ public class CountryServiceImpl implements CountryService {
   public Country getCountry(Integer id) {
     return countryJpaRepository.findById(id)
             .orElseThrow(() -> {
-              String msg = String.format("Country does not exists or cannot be found. ID: %d", id);
-              return new CountryNotFoundException(msg);
+              String message = String.format("Country does not exists or cannot be found. ID: %d", id);
+              return new CountryNotFoundException(message);
             });
   }
 
   @Override
-  public List<Country> getFaculties() {
+  public List<Country> getCountries() {
     return countryJpaRepository.findAll();
   }
 
   @Override
+  @Transactional
   public Country saveCountry(CountryDto dto) {
-    Country Country = dto.toCountry();
-    return countryJpaRepository.save(Country);
+    Country country = dto.toCountry();
+    System.out.println("The country id is : " + country.getId());
+    return countryJpaRepository.save(country);
   }
 
   @Override
+  @Transactional
   public Country updateCountry(Integer id, CountryDto dto) {
     getCountry(id);
-    Country Country = dto.toCountry();
-    Country.setId(id);
-    return countryJpaRepository.save(Country);
+    Country country = dto.toCountry();
+    country.setId(id);
+
+    return countryJpaRepository.save(country);
   }
 
   @Override
+  @Transactional
   public void deleteMany(DeleteIdsDto dto) {
     List<Country> countries = dto
             .getIds()
             .stream()
-            .map(id -> Country.
-                    builder()
-                    .id(id)
-                    .build())
+            .map(id -> Country.builder()
+                    .id(id).build())
             .collect(Collectors.toList());
 
     countryJpaRepository.deleteAll(countries);
@@ -71,7 +75,6 @@ public class CountryServiceImpl implements CountryService {
 
   @Override
   public boolean isCountryExists(Integer id) {
-    System.out.println("Checking country id : " + id);
     return countryJpaRepository.findById(id).isPresent();
   }
 

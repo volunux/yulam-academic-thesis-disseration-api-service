@@ -37,14 +37,6 @@
     </ul>
   </div>
 
-  <div>
-    <label for="description" title="description">Description</label>
-    <textarea id="description" required="required" th:name="description" th:text="${formData.description} ?: ''"></textarea>
-    <ul th:if="${#fields.hasErrors('description')}">
-      <li th:each="error: ${#fields.errors('description')}" th:text="${error}"></li>
-    </ul>
-  </div>
-
   <input type="submit" value="Submit"/>
 
 </form>

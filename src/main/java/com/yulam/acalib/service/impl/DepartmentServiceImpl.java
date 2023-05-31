@@ -55,12 +55,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     List<Department> departments = dto
             .getIds()
             .stream()
-            .map(id -> Department.
-                    builder()
-                    .id(id)
-                    .build())
+            .map(id -> Department.builder()
+                    .id(id).build())
             .collect(Collectors.toList());
-
     departmentJpaRepository.deleteAll(departments);
   }
 
@@ -73,4 +70,5 @@ public class DepartmentServiceImpl implements DepartmentService {
   public boolean isDepartmentExists(Integer id) {
     return departmentJpaRepository.findById(id).isPresent();
   }
+
 }

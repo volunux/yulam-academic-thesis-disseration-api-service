@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @Controller
@@ -36,7 +37,7 @@ public class CountryController extends ControllerConfig {
 
   @GetMapping(value = "/entries")
   public String findAll(Model model) {
-    List<Country> countries = countryService.getFaculties();
+    List<Country> countries = countryService.getCountries();
     List<CountryView> countryViews = CountryMapper.toCountryViews(countries);
 
     model.addAttribute("title", "List of Country");
@@ -49,6 +50,7 @@ public class CountryController extends ControllerConfig {
     Country country = countryService.getCountry(id);
     CountryView countryView = CountryMapper.toCountryView(country);
 
+    model.addAttribute("title", "Country Detail");
     model.addAttribute("country", countryView);
     return "country/detail";
   }
@@ -57,7 +59,6 @@ public class CountryController extends ControllerConfig {
   public String add(Model model) {
     model.addAttribute("title", getCreateViewTitle());
     model.addAttribute("formData", CountryDto.builder().build());
-
     return "country/create";
   }
 
@@ -65,27 +66,23 @@ public class CountryController extends ControllerConfig {
   public String save(@Valid @ModelAttribute("formData") CountryDto dto,
                      BindingResult bindingResult, Model model,
                      RedirectAttributes redirectAttributes) {
-
     if (bindingResult.hasErrors()) {
       model.addAttribute("title", getCreateViewTitle());
-
       return "country/create";
     }
 
     countryService.saveCountry(dto);
-
-    redirectAttributes.addFlashAttribute(getFormProcessedMessageKey(), "Success");
+    this.addFormProcessedAttribute(redirectAttributes);
     return "redirect:".concat(getEntriesPath());
   }
 
   @GetMapping(value = "/update/{id}")
   public String edit(@PathVariable Integer id, Model model) {
-
     Country country = countryService.getCountry(id);
     CountryDto dto = CountryDto.builder()
             .title(country.getTitle())
             .code(country.getCode())
-            .foundingYear(String.valueOf(country.getFoundingYear()))
+            .foundingYear(Objects.toString(country.getFoundingYear(), null))
             .mapLogoUrl(country.getMapLogoUrl())
             .build();
 
@@ -96,12 +93,11 @@ public class CountryController extends ControllerConfig {
 
   @PostMapping(value = "/update/{id}")
   public String update(@Valid @ModelAttribute("formData") CountryDto dto,
-                       @PathVariable Integer id, Model model,
-                       BindingResult bindingResult) {
-
+                       BindingResult bindingResult,
+                       @PathVariable Integer id, Model model) {
+    countryService.getCountry(id);
     if (bindingResult.hasErrors()) {
       model.addAttribute("title", getUpdateViewTitle());
-
       return "country/create";
     }
 
@@ -119,8 +115,7 @@ public class CountryController extends ControllerConfig {
   @PostMapping(value ="/delete-all")
   public String deleteAll(RedirectAttributes redirectAttributes) {
     countryService.deleteAllCountry();
-
-    redirectAttributes.addFlashAttribute(getFormProcessedMessageKey(), "Success");
+    this.addFormProcessedAttribute(redirectAttributes);
     return "redirect:".concat(getBasePath());
   }
 

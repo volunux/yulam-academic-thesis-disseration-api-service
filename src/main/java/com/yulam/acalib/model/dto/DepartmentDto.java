@@ -6,7 +6,7 @@ import com.yulam.acalib.validator.FacultyExists;
 import com.yulam.acalib.validator.IsNumber;
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Builder
@@ -16,27 +16,23 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 public class DepartmentDto {
 
-  @NotNull
-  @Size(min = 1, max = 200)
+  @NotBlank(message = "{department.title.notEmpty}")
+  @Size(min = 1, max = 200, message = "{department.title.size}")
   private String title;
 
-  @NotNull
-  @Size(min = 3, max = 5)
+  @NotBlank(message = "{department.code.notEmpty}")
+  @Size(min = 3, max = 5, message = "{department.code.size}")
   private String code;
 
-  @Size(min = 10, max = 1000)
-  private String description;
-
-  @NotNull
-  @IsNumber
-  @FacultyExists
+  @NotBlank(message = "{department.faculty.notEmpty}")
+  @IsNumber(message = "{department.faculty.isNumber}")
+  @FacultyExists(message = "{department.faculty.exists}")
   private String faculty;
 
   public Department toDepartment() {
     return Department.builder()
             .title(title)
             .code(code)
-            .description(code)
             .faculty(Faculty.builder()
                     .id(Integer.parseInt(faculty)).build())
             .build();

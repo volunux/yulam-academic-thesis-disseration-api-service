@@ -1,3 +1,4 @@
-<footer class="text-center">
-  <p th:text="|Copyright &copy; ${siteName} &vert; All Rights Reserved. ${currentYear}|"></p>
+<footer class="text-center" th:fragment="footer">
+<!--  <p th:text="|Copyright &copy; ${siteName} &vert; All Rights Reserved. ${currentYear}|"></p>-->
+  <p th:text="${'Copyright &copy; ' + siteName + ' &vert; All Rights Reserved. ' + currentYear}"></p>
 </footer>

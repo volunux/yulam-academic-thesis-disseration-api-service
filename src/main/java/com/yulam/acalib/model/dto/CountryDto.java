@@ -5,7 +5,9 @@ import com.yulam.acalib.validator.IsNumber;
 import lombok.*;
 import org.hibernate.validator.constraints.URL;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Builder
 @Getter
@@ -14,22 +16,21 @@ import javax.validation.constraints.*;
 @AllArgsConstructor
 public class CountryDto {
 
-  @NotBlank
-  @Size(min = 1, max = 200)
+  @NotBlank(message = "{country.title.notEmpty}")
+  @Size(min = 1, max = 200, message = "{country.title.size}")
   private String title;
 
-  @NotBlank
-  @Size(min = 3, max = 5)
+  @NotBlank(message = "{country.code.notEmpty}")
+  @Size(min = 3, max = 5, message = "{country.code.size}")
   private String code;
 
-  @NotNull
-  @IsNumber
-  @Positive
-  @Digits(integer = 4, fraction = 0)
+  @NotNull(message = "{country.foundingYear.notEmpty}")
+  @IsNumber(message = "{country.foundingYear.isNumber}")
+  @Size(min = 4, max = 4, message = "{country.foundingYear.size}")
   private String foundingYear;
 
-  @URL
-  @Size(max = 500)
+  @URL(message = "{country.mapLogoUrl.isUrl}")
+  @Size(max = 500, message = "{country.mapLogoUrl.size}")
   private String mapLogoUrl;
 
   public Country toCountry() {

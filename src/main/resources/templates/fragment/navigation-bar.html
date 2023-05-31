@@ -1,39 +1,39 @@
- <nav>
+ <nav th:fragment="nav">
     <ul>
       <li>
         <a th:href="/"><span class ="fa fa-home"></span>Home</a>
       </li>
 
       <li>
-        <a href ="/cart"><span class ="fa fa-shopping-cart"></span>Cart</a>
+        <a th:href ="/cart"><span class ="fa fa-shopping-cart"></span>Cart</a>
       </li>
 
       <li>
-        <a href ="/thesis/user"><span class ="fa fa-book"></span>Thesis</a>
+        <a th:href ="/thesis/user"><span class ="fa fa-book"></span>Thesis</a>
       </li>
 
       <li>
-        <a href ="/dashboard"><span class ="fa fa-dashboard"></span>Dashboard</a>
+        <a th:href ="/dashboard"><span class ="fa fa-dashboard"></span>Dashboard</a>
       </li>
 
       <li>
-        <a href ="/sign-out"><span class ="fa fa-sign-out"></span>Sign out</a>
+        <a th:href ="/sign-out"><span class ="fa fa-sign-out"></span>Sign out</a>
       </li>
 
       <li>
-        <a href ="/sign-in"> <span class ="fa fa-sign-in"></span>Sign in</a>
+        <a th:href ="/sign-in"> <span class ="fa fa-sign-in"></span>Sign in</a>
       </li>
 
       <li>
-        <a href ="/sign-up"> <span class ="fa fa-plus"></span>Sign up</a>
+        <a th:href ="/sign-up"> <span class ="fa fa-plus"></span>Sign up</a>
       </li>
 
       <li>
-        <a href ="/more"> <span class ="fa fa-question-circle"></span> More </a>
+        <a th:href ="/more"> <span class ="fa fa-question-circle"></span> More </a>
       </li>
 
       <li>
-        <a href="javascript:void(0);" id="menu-icon"> <span class="fa fa-bars"></span> </a>
+        <a th:href="javascript:void(0);" id="menu-icon"> <span class="fa fa-bars"></span> </a>
       </li>
 
     </ul>

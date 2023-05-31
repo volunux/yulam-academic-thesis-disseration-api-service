@@ -29,9 +29,6 @@ public class Faculty {
   @Column(name = "code", nullable = false, length = 5)
   private String code;
 
-  @Column(name = "description", length = 1000)
-  private String description;
-
   @CreationTimestamp
   @Column(name = "created_on")
   private LocalDateTime createdOn;

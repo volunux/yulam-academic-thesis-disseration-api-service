@@ -27,9 +27,6 @@ public class State {
   @Column(name = "title", nullable = false, length = 100)
   private String title;
 
-  @Column(name = "about", length = 1000)
-  private String about;
-
   @Column(name = "capital", nullable = false, length = 20)
   private String capital;
 

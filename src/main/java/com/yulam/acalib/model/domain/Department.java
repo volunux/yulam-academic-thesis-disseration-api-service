@@ -29,9 +29,6 @@ public class Department {
   @Column(name = "code", nullable = false, length = 5)
   private String code;
 
-  @Column(name = "description", length = 1000)
-  private String description;
-
   @ManyToOne
   @JoinColumn(name ="faculty_id", nullable = false)
   private Faculty faculty;

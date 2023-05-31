@@ -27,9 +27,6 @@ public class Author {
   @Column(name ="institution_email_address_verified")
   private Boolean institutionEmailAddressVerified;
 
-  @Column(name = "graduation_year")
-  private Integer graduationYear;
-
   @OneToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @JoinColumn(name = "member_id", referencedColumnName = "id")
   private Member member;

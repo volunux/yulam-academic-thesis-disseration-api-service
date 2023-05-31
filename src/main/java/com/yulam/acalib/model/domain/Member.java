@@ -36,9 +36,13 @@ public class Member {
   @Column(name = "password_hash", nullable = false, length = 500)
   private String password;
 
+  @Column(name = "reset_password_token", length = 500)
+  private String resetPasswordToken;
+
   @Column(name = "avatar", length = 500)
   private String avatar;
 
+  @Column(name ="email_address_verified")
   private Boolean emailAddressVerified;
 
   @ManyToMany(fetch = FetchType.EAGER)

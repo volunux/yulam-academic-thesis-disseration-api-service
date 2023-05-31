@@ -49,6 +49,7 @@ public class FacultyController extends ControllerConfig {
     Faculty faculty = facultyService.getFaculty(id);
     FacultyView facultyView = FacultyMapper.toFacultyView(faculty);
 
+    model.addAttribute("title", "Faculty Detail");
     model.addAttribute("faculty", facultyView);
     return "faculty/detail";
   }
@@ -57,7 +58,6 @@ public class FacultyController extends ControllerConfig {
   public String add(Model model) {
     model.addAttribute("title", getCreateViewTitle());
     model.addAttribute("formData", FacultyDto.builder().build());
-
     return "faculty/create";
   }
 
@@ -65,27 +65,22 @@ public class FacultyController extends ControllerConfig {
   public String save(@Valid @ModelAttribute("formData") FacultyDto dto,
                      BindingResult bindingResult, Model model,
                      RedirectAttributes redirectAttributes) {
-
     if (bindingResult.hasErrors()) {
       model.addAttribute("title", getCreateViewTitle());
-
       return "faculty/create";
     }
 
     facultyService.saveFaculty(dto);
-
-    redirectAttributes.addFlashAttribute(getFormProcessedMessageKey(), "Success");
+    this.addFormProcessedAttribute(redirectAttributes);
     return "redirect:".concat(getEntriesPath());
   }
 
   @GetMapping(value = "/update/{id}")
   public String edit(@PathVariable Integer id, Model model) {
-
     Faculty faculty = facultyService.getFaculty(id);
     FacultyDto dto = FacultyDto.builder()
             .title(faculty.getTitle())
             .code(faculty.getCode())
-            .description(faculty.getDescription())
             .build();
 
     model.addAttribute("title", getUpdateViewTitle());
@@ -95,12 +90,11 @@ public class FacultyController extends ControllerConfig {
 
   @PostMapping(value = "/update/{id}")
   public String update(@Valid @ModelAttribute("formData") FacultyDto dto,
-                       @PathVariable Integer id, Model model,
-                       BindingResult bindingResult) {
-
+                       BindingResult bindingResult,
+                       @PathVariable Integer id, Model model) {
+    facultyService.getFaculty(id);
     if (bindingResult.hasErrors()) {
       model.addAttribute("title", getUpdateViewTitle());
-
       return "faculty/create";
     }
 
@@ -118,8 +112,7 @@ public class FacultyController extends ControllerConfig {
   @PostMapping(value ="/delete-all")
   public String deleteAll(RedirectAttributes redirectAttributes) {
     facultyService.deleteAllFaculty();
-
-    redirectAttributes.addFlashAttribute(getFormProcessedMessageKey(), "Success");
+    this.addFormProcessedAttribute(redirectAttributes);
     return "redirect:".concat(getBasePath());
   }
 

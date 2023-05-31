@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="shortcut icon" href =""/>
+    <title>[[${title}]]</title>
 </head>
 <body>
 
+  <h1>[[${title}]]</h1>
+
+  <div th:if="${formProcessingStatus != null}">
+    <p th:text="${formProcessingStatus}"></p>
+  </div>
+
+  <div th:if="${countries.size() > 0}">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Code</th>
+          <th scope="col">Founding Year</th>
+          <th scope="col">Created On</th>
+          <th scope="col">Updated On</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="country : ${countries}">
+          <td th:text="${country.id} ?: 'Not Available'"></td>
+          <td th:text="${country.title} ?: 'Not Available'"></td>
+          <td th:text="${country.code} ?: 'Not Available'"></td>
+          <td th:text="${country.foundingYear} ?: 'Not Available'"></td>
+          <td th:text="${#temporals.format(country.createdOn, 'MMMM d, yyyy')} ?: 'Not Available'"></td>
+          <td th:text="${#temporals.format(country.updatedOn, 'MMMM d, yyyy')} ?: 'Not Available'"></td>
+          <div th:replace="fragment/commons.html :: viewUpdateLink(path='country', id=${country.id})"></div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div th:replace="~{fragment/footer ::footer}"></div>
+
 </body>
 </html>
+
